@@ -383,7 +383,7 @@ void subtitles_load(void)
 	rdpq_font_style(sub_font, 0, &(rdpq_fontstyle_t){
 		.color = RGBA32(0xFF, 0xFF, 0xFF, 0xFF),
 	});
-	rdpq_text_register_font(2, sub_font);
+	rdpq_text_register_font(1, sub_font);
 }
 
 static int _subtitles_get_ind(float timer, int night, float offset) {
@@ -409,7 +409,7 @@ void subtitles_draw(float timer, int night, float offset)
 		.align = 1, .valign = 1,
 		.width = 320,
 	};
-	rdpq_text_printf(&parms, 2, 0, 48,
+	rdpq_text_printf(&parms, 1, 0, 48,
 			_subtitles_get_text(timer, night, offset));
 }
 
