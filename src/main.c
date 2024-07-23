@@ -121,7 +121,5 @@ int main(void)
 		audio_write_end();
 	}
 
-	subtitles_unload();
-
 	return 0;
 }
