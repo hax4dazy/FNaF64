@@ -125,12 +125,12 @@ enum scene custom_night_update(update_parms_t uparms)
 	
 	if(uparms.pressed.start) {
 		if(freddy_ai_level == 1 && bonnie_ai_level == 9 &&
-				chica_ai_level == 8 && foxy_ai_level == 7)
+				chica_ai_level == 8 && foxy_ai_level == 7) {
 			golden_freddy_load();
 			_custom_night_unload();
 			golden_freddy_draw_scare();
 			wav64_play(&jumpscare_low, SFXC_JUMPSCARE);
-
+		}
 		sfx_stop_all();
 		rdpq_call_deferred((void (*)(void *))_custom_night_unload,
 				NULL);
