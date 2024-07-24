@@ -191,7 +191,6 @@ void title_draw(void)
         rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
 		object_draw(ram_message, 0, -5, 0, 0);
 		rdpq_text_print(NULL, 1, 70, 150, "To start your shift at the World\nFamous Freddy Fazebears Pizzaria\nmake sure your Fazebear\nEntertainment provided Expansion Pak\nis installed in your console.");
-		}
 	}
 
 	if(eeprom_failed && !eeprom_fail_notice) {
@@ -225,6 +224,7 @@ draw_newspaper:
 	rdpq_set_fog_color(RGBA32(0xFF, 0xFF, 0xFF, alpha * 255));
      	rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY_CONST);
 	object_draw(newspaper, 0, 0, 0, 0);
+
 }
 
 static void _title_update_settings(joypad_buttons_t down)
