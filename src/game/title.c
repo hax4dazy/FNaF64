@@ -45,6 +45,7 @@ static object_t ram_message;
 static object_t newspaper;
 
 static bool eeprom_fail_notice = false;
+static bool memory_error = false;
 
 static void _title_load(void)
 {
@@ -177,6 +178,7 @@ void title_draw(void)
 	blip_draw();
 
 	if(!is_memory_expanded()){
+		memory_error = true;
 		sfx_stop_all();
 		_title_unload();
 		rdpq_set_mode_standard();
@@ -193,7 +195,7 @@ void title_draw(void)
 		rdpq_text_print(NULL, 1, 70, 150, "To start your shift at the World\nFamous Freddy Fazebears Pizzaria\nmake sure your Fazebear\nEntertainment provided Expansion Pak\nis installed in your console.");
 	}
 
-	if(eeprom_failed && !eeprom_fail_notice) {
+	if(eeprom_failed && !eeprom_fail_notice && !memory_error) {
 		rdpq_set_mode_standard();
 		rdpq_set_prim_color(RGBA32(0x0, 0x0, 0x0, 0xD8));
 		rdpq_mode_combiner(RDPQ_COMBINER_FLAT);
