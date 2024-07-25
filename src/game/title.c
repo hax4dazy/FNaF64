@@ -192,7 +192,7 @@ void title_draw(void)
 		rdpq_set_mode_standard();
         rdpq_mode_blender(RDPQ_BLENDER_MULTIPLY);
 		object_draw(ram_message, 0, -5, 0, 0);
-		rdpq_text_print(NULL, 1, 70, 150, "To start your shift at the World\nFamous Freddy Fazebears Pizzaria\nmake sure your Fazebear\nEntertainment provided Expansion Pak\nis installed in your console.");
+		rdpq_text_print(NULL, 1, 70, 150, "To start your shift at the World\nFamous Freddy Fazbears Pizzaria,\nmake sure your Fazbear Entertainment\nprovided Expansion Pak\nis installed in your console.");
 	}
 
 	if(eeprom_failed && !eeprom_fail_notice && !memory_error) {
